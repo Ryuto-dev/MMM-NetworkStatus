@@ -1,0 +1,19 @@
+{
+  "ONLINE": "Internet připojen",
+  "OFFLINE_WARNING": "ŽÁDNÉ PŘIPOJENÍ K INTERNETU",
+  "NO_CONNECTION_SHORT": "OFFLINE",
+  "CHECKING": "Kontrola připojení…",
+  "MEASURING": "Měření rychlosti…",
+  "LOADING": "Načítání…",
+  "PING": "Ping",
+  "DOWNLOAD": "Stahování",
+  "UPLOAD": "Odesílání",
+  "JITTER": "Jitter",
+  "PACKET_LOSS": "Ztráta",
+  "SPEEDTEST_ERROR": "Test rychlosti selhal",
+  "UPDATED": "Aktualizováno {time} zpět",
+  "SECONDS": "s",
+  "MINUTES": "min",
+  "HOURS": "h",
+  "DAYS": "d"
+}

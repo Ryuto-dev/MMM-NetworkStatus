@@ -1,0 +1,19 @@
+{
+  "ONLINE": "Інтернет підключено",
+  "OFFLINE_WARNING": "НЕМАЄ З'ЄДНАННЯ З ІНТЕРНЕТОМ",
+  "NO_CONNECTION_SHORT": "НЕМАЄ ЗВ'ЯЗКУ",
+  "CHECKING": "Перевірка з'єднання…",
+  "MEASURING": "Вимірювання швидкості…",
+  "LOADING": "Завантаження…",
+  "PING": "Пінг",
+  "DOWNLOAD": "Завантаження",
+  "UPLOAD": "Вивантаження",
+  "JITTER": "Джитер",
+  "PACKET_LOSS": "Втрати",
+  "SPEEDTEST_ERROR": "Тест швидкості не вдався",
+  "UPDATED": "Оновлено {time} тому",
+  "SECONDS": "с",
+  "MINUTES": "хв",
+  "HOURS": "год",
+  "DAYS": "дн"
+}

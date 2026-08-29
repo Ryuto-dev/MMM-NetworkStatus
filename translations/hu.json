@@ -1,0 +1,19 @@
+{
+  "ONLINE": "Internet csatlakoztatva",
+  "OFFLINE_WARNING": "NINCS INTERNETKAPCSOLAT",
+  "NO_CONNECTION_SHORT": "OFFLINE",
+  "CHECKING": "Kapcsolat ellenőrzése…",
+  "MEASURING": "Sebesség mérése…",
+  "LOADING": "Betöltés…",
+  "PING": "Ping",
+  "DOWNLOAD": "Letöltés",
+  "UPLOAD": "Feltöltés",
+  "JITTER": "Jitter",
+  "PACKET_LOSS": "Veszteség",
+  "SPEEDTEST_ERROR": "A sebességteszt nem sikerült",
+  "UPDATED": "Frissítve {time} ezelőtt",
+  "SECONDS": "mp",
+  "MINUTES": "p",
+  "HOURS": "ó",
+  "DAYS": "n"
+}

@@ -1,0 +1,19 @@
+{
+  "ONLINE": "الإنترنت متصل",
+  "OFFLINE_WARNING": "لا يوجد اتصال بالإنترنت",
+  "NO_CONNECTION_SHORT": "غير متصل",
+  "CHECKING": "جارٍ التحقق من الاتصال…",
+  "MEASURING": "جارٍ قياس السرعة…",
+  "LOADING": "جارٍ التحميل…",
+  "PING": "زمن الاستجابة",
+  "DOWNLOAD": "التنزيل",
+  "UPLOAD": "التحميل",
+  "JITTER": "التقلب",
+  "PACKET_LOSS": "الفقد",
+  "SPEEDTEST_ERROR": "فشل اختبار السرعة",
+  "UPDATED": "تم التحديث منذ {time}",
+  "SECONDS": "ث",
+  "MINUTES": "د",
+  "HOURS": "س",
+  "DAYS": "ي"
+}

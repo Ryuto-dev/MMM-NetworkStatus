@@ -1,0 +1,19 @@
+{
+  "ONLINE": "Internet tersambung",
+  "OFFLINE_WARNING": "TIDAK ADA KONEKSI INTERNET",
+  "NO_CONNECTION_SHORT": "OFFLINE",
+  "CHECKING": "Memeriksa koneksi…",
+  "MEASURING": "Mengukur kecepatan…",
+  "LOADING": "Memuat…",
+  "PING": "Ping",
+  "DOWNLOAD": "Unduh",
+  "UPLOAD": "Unggah",
+  "JITTER": "Jitter",
+  "PACKET_LOSS": "Kehilangan",
+  "SPEEDTEST_ERROR": "Uji kecepatan gagal",
+  "UPDATED": "Diperbarui {time} lalu",
+  "SECONDS": "dtk",
+  "MINUTES": "mnt",
+  "HOURS": "jam",
+  "DAYS": "hr"
+}

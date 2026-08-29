@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MMM-NetworkStatus – preview</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="../MMM-NetworkStatus.css">
+<style>
+  body {
+    margin: 0;
+    padding: 32px;
+    background: #000;
+    color: #fff;
+    font-family: "Roboto Condensed", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+  }
+  h1 { font-size: 22px; font-weight: 300; letter-spacing: .08em; text-transform: uppercase; color: #bbb; }
+  .grid { display: flex; flex-wrap: wrap; gap: 40px; margin-top: 28px; }
+  .card { min-width: 320px; }
+  .card h2 { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #777; font-weight: 400; margin: 0 0 12px; }
+  .bar { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+  button, select {
+    background: #111; color: #eee; border: 1px solid #333; padding: 8px 14px;
+    font-family: inherit; font-size: 14px; cursor: pointer;
+  }
+  .dimmed { color: #777; }
+  .xsmall { font-size: 13px; }
+  .note { margin-top: 28px; color: #666; font-size: 13px; max-width: 62ch; line-height: 1.6; }
+</style>
+</head>
+<body>
+<h1>MMM-NetworkStatus — visual preview</h1>
+
+<div class="bar">
+  <button id="btn-idle">Online (idle)</button>
+  <button id="btn-measure">Measuring…</button>
+  <button id="btn-offline">Offline warning</button>
+  <select id="lang"></select>
+</div>
+
+<div class="grid">
+  <div class="card"><h2>Vertical / medium</h2><div id="v1"></div></div>
+  <div class="card"><h2>Horizontal / small</h2><div id="v2"></div></div>
+  <div class="card"><h2>Compact / xsmall (no labels)</h2><div id="v3"></div></div>
+</div>
+
+<p class="note">
+  This page renders the real module CSS with a stubbed MagicMirror runtime, so the layouts,
+  the counting animation and the red offline warning can be reviewed without installing
+  MagicMirror. Values are simulated.
+</p>
+
+<script src="../lib/format.js"></script>
+<script>
+/* ---------- minimal MagicMirror stub ---------- */
+const LANGS = ["en","ja","de","fr","es","it","nl","pt","pt-br","ru","pl","sv","da","nb","fi","cs","tr","hu","uk","zh_cn","zh_tw","ko","id","hi","ar"];
+let TRANSLATIONS = {};
+let registered = null;
+
+window.Log = { info(){}, warn(){}, error(){}, log(){}, debug(){} };
+window.Module = { register(name, def){ registered = { name, def }; } };
+</script>
+<script src="../MMM-NetworkStatus.js"></script>
+<script>
+const instances = [];
+
+function makeInstance(host, overrides) {
+  const def = registered.def;
+  const inst = Object.create(def);
+  inst.name = registered.name;
+  inst.identifier = "preview_" + host;
+  inst.data = { path: "../" };
+  inst.config = structuredClone(def.defaults);
+  Object.assign(inst.config, overrides);
+  inst.file = (f) => "../" + f;
+  inst.sendSocketNotification = () => {};
+  inst.translate = (key, vars) => {
+    const t = (TRANSLATIONS[key] ?? key);
+    return vars ? t.replace(/\{(\w+)\}/g, (m, n) => vars[n] ?? m) : t;
+  };
+  inst.host = document.getElementById(host);
+  inst.updateDom = () => {
+    inst.host.replaceChildren(inst.getDom());
+  };
+  inst.start();
+  inst.updateDom();
+  instances.push(inst);
+  return inst;
+}
+
+function forAll(fn) { instances.forEach(fn); }
+
+function setIdle() {
+  forAll((i) => {
+    i.stopLiveAnimation();
+    i.countUp = {};
+    Object.assign(i.state, {
+      online: true, offlineReason: null, testing: false, stage: null, liveValue: null,
+      ping: 12.4, jitter: 1.4, packetLoss: 0,
+      download: 94.4e6, upload: 18.4e6,
+      server: { name: "Example Server", location: "Tokyo" },
+      lastUpdated: Date.now() - 120000, error: null
+    });
+    i.updateDom();
+  });
+}
+
+function setMeasuring() {
+  forAll((i) => {
+    Object.assign(i.state, { online: true, offlineReason: null, error: null });
+    i.socketNotificationReceived("NETWORK_STATUS_SPEEDTEST_START", { identifier: i.identifier, engine: "ookla" });
+    i.updateDom();
+  });
+  // Simulate the Ookla progress stream.
+  let t = 0;
+  clearInterval(window._sim);
+  window._sim = setInterval(() => {
+    t += 0.25;
+    const stage = t < 2 ? "ping" : t < 8 ? "download" : "upload";
+    const peak = stage === "download" ? 94.4e6 : 18.4e6;
+    const p = stage === "ping" ? t / 2 : ((t % 6) / 6);
+    forAll((i) => {
+      if (!i.state.testing) return;
+      i.socketNotificationReceived("NETWORK_STATUS_SPEEDTEST_PROGRESS", {
+        identifier: i.identifier,
+        stage,
+        progress: p,
+        bandwidth: stage === "ping" ? null : peak * (0.3 + 0.7 * p),
+        latency: stage === "ping" ? 8 + 8 * p : null
+      });
+    });
+    if (t > 14) {
+      clearInterval(window._sim);
+      forAll((i) => i.socketNotificationReceived("NETWORK_STATUS_SPEEDTEST_RESULT", {
+        identifier: i.identifier, engine: "ookla", timestamp: Date.now(),
+        result: {
+          ping: { latency: 11.9, jitter: 1.5, packetLoss: 0 },
+          download: { bandwidth: 94.4e6 }, upload: { bandwidth: 18.4e6 },
+          server: { name: "Example Server", location: "Tokyo" }, isp: "Example ISP"
+        }
+      }));
+    }
+  }, 250);
+}
+
+function setOffline() {
+  clearInterval(window._sim);
+  forAll((i) => {
+    i.stopLiveAnimation();
+    i.socketNotificationReceived("NETWORK_STATUS_CONNECTIVITY", {
+      identifier: i.identifier, online: false, reason: "DNS_ENOTFOUND",
+      ping: { latency: null }, timestamp: Date.now()
+    });
+    i.updateDom();
+  });
+}
+
+async function loadLanguage(lang) {
+  const res = await fetch(`../translations/${lang}.json`);
+  TRANSLATIONS = await res.json();
+  forAll((i) => i.updateDom());
+}
+
+async function boot() {
+  const select = document.getElementById("lang");
+  select.innerHTML = LANGS.map((l) => `<option value="${l}">${l}</option>`).join("");
+  select.addEventListener("change", (e) => loadLanguage(e.target.value));
+
+  await loadLanguage("en");
+
+  makeInstance("v1", { fontSize: "medium", layout: "vertical", showLastUpdated: true, showJitter: true });
+  makeInstance("v2", { fontSize: "small", layout: "horizontal" });
+  makeInstance("v3", { fontSize: "xsmall", layout: "compact", showStatus: true });
+
+  document.getElementById("btn-idle").addEventListener("click", () => { clearInterval(window._sim); setIdle(); });
+  document.getElementById("btn-measure").addEventListener("click", setMeasuring);
+  document.getElementById("btn-offline").addEventListener("click", setOffline);
+
+  setIdle();
+}
+boot();
+</script>
+</body>
+</html>

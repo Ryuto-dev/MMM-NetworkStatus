@@ -1,0 +1,19 @@
+{
+  "ONLINE": "Internet yhdistetty",
+  "OFFLINE_WARNING": "EI INTERNET-YHTEYTTÄ",
+  "NO_CONNECTION_SHORT": "EI YHTEYTTÄ",
+  "CHECKING": "Tarkistetaan yhteyttä…",
+  "MEASURING": "Mitataan nopeutta…",
+  "LOADING": "Ladataan…",
+  "PING": "Ping",
+  "DOWNLOAD": "Lataus",
+  "UPLOAD": "Lähetys",
+  "JITTER": "Värinä",
+  "PACKET_LOSS": "Hukka",
+  "SPEEDTEST_ERROR": "Nopeustesti epäonnistui",
+  "UPDATED": "Päivitetty {time} sitten",
+  "SECONDS": "s",
+  "MINUTES": "min",
+  "HOURS": "t",
+  "DAYS": "pv"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "mmm-networkstatus",
+  "version": "1.0.0",
+  "description": "MagicMirror² module showing internet connectivity, ping, download and upload speed with text and icons only. Successor of the unavailable MMM-NetworkConnection.",
+  "main": "MMM-NetworkStatus.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "lint": "node scripts/lint.js",
+    "check": "npm run lint && npm test"
+  },
+  "keywords": [
+    "MagicMirror",
+    "MagicMirror2",
+    "magicmirror-module",
+    "network",
+    "speedtest",
+    "ookla",
+    "ping",
+    "connectivity",
+    "internet"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ryuto-dev/MMM-NetworkStatus.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ryuto-dev/MMM-NetworkStatus/issues"
+  },
+  "homepage": "https://github.com/Ryuto-dev/MMM-NetworkStatus#readme",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {}
+}
