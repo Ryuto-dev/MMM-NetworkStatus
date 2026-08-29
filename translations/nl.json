@@ -1,0 +1,19 @@
+{
+  "ONLINE": "Internet verbonden",
+  "OFFLINE_WARNING": "GEEN INTERNETVERBINDING",
+  "NO_CONNECTION_SHORT": "OFFLINE",
+  "CHECKING": "Verbinding controleren…",
+  "MEASURING": "Snelheid meten…",
+  "LOADING": "Laden…",
+  "PING": "Ping",
+  "DOWNLOAD": "Download",
+  "UPLOAD": "Upload",
+  "JITTER": "Jitter",
+  "PACKET_LOSS": "Verlies",
+  "SPEEDTEST_ERROR": "Snelheidstest mislukt",
+  "UPDATED": "{time} geleden bijgewerkt",
+  "SECONDS": "sec",
+  "MINUTES": "min",
+  "HOURS": "u",
+  "DAYS": "d"
+}

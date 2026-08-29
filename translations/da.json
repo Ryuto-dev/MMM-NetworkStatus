@@ -1,0 +1,19 @@
+{
+  "ONLINE": "Internet forbundet",
+  "OFFLINE_WARNING": "INGEN INTERNETFORBINDELSE",
+  "NO_CONNECTION_SHORT": "OFFLINE",
+  "CHECKING": "Kontrollerer forbindelse…",
+  "MEASURING": "Måler hastighed…",
+  "LOADING": "Indlæser…",
+  "PING": "Ping",
+  "DOWNLOAD": "Download",
+  "UPLOAD": "Upload",
+  "JITTER": "Jitter",
+  "PACKET_LOSS": "Tab",
+  "SPEEDTEST_ERROR": "Hastighedstest mislykkedes",
+  "UPDATED": "Opdateret for {time} siden",
+  "SECONDS": "sek",
+  "MINUTES": "min",
+  "HOURS": "t",
+  "DAYS": "d"
+}

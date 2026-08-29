@@ -1,0 +1,19 @@
+{
+  "ONLINE": "Internett tilkoblet",
+  "OFFLINE_WARNING": "INGEN INTERNETTFORBINDELSE",
+  "NO_CONNECTION_SHORT": "OFFLINE",
+  "CHECKING": "Sjekker tilkobling…",
+  "MEASURING": "Måler hastighet…",
+  "LOADING": "Laster…",
+  "PING": "Ping",
+  "DOWNLOAD": "Nedlasting",
+  "UPLOAD": "Opplasting",
+  "JITTER": "Jitter",
+  "PACKET_LOSS": "Tap",
+  "SPEEDTEST_ERROR": "Hastighetstesten mislyktes",
+  "UPDATED": "Oppdatert for {time} siden",
+  "SECONDS": "sek",
+  "MINUTES": "min",
+  "HOURS": "t",
+  "DAYS": "d"
+}

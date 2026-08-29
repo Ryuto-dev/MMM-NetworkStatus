@@ -1,0 +1,19 @@
+{
+  "ONLINE": "已连接互联网",
+  "OFFLINE_WARNING": "无法连接互联网",
+  "NO_CONNECTION_SHORT": "未连接",
+  "CHECKING": "正在检查连接…",
+  "MEASURING": "正在测速…",
+  "LOADING": "加载中…",
+  "PING": "延迟",
+  "DOWNLOAD": "下载",
+  "UPLOAD": "上传",
+  "JITTER": "抖动",
+  "PACKET_LOSS": "丢包",
+  "SPEEDTEST_ERROR": "测速失败",
+  "UPDATED": "{time}前更新",
+  "SECONDS": "秒",
+  "MINUTES": "分钟",
+  "HOURS": "小时",
+  "DAYS": "天"
+}

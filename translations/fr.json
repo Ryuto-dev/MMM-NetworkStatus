@@ -1,0 +1,19 @@
+{
+  "ONLINE": "Internet connecté",
+  "OFFLINE_WARNING": "PAS DE CONNEXION INTERNET",
+  "NO_CONNECTION_SHORT": "HORS LIGNE",
+  "CHECKING": "Vérification de la connexion…",
+  "MEASURING": "Mesure de la vitesse…",
+  "LOADING": "Chargement…",
+  "PING": "Ping",
+  "DOWNLOAD": "Téléchargement",
+  "UPLOAD": "Envoi",
+  "JITTER": "Gigue",
+  "PACKET_LOSS": "Perte",
+  "SPEEDTEST_ERROR": "Échec du test de vitesse",
+  "UPDATED": "Mis à jour il y a {time}",
+  "SECONDS": "s",
+  "MINUTES": "min",
+  "HOURS": "h",
+  "DAYS": "j"
+}

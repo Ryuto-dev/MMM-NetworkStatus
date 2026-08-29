@@ -1,0 +1,19 @@
+{
+  "ONLINE": "インターネット接続中",
+  "OFFLINE_WARNING": "インターネットに接続されていません",
+  "NO_CONNECTION_SHORT": "未接続",
+  "CHECKING": "接続を確認中…",
+  "MEASURING": "速度を測定中…",
+  "LOADING": "読み込み中…",
+  "PING": "応答速度",
+  "DOWNLOAD": "下り",
+  "UPLOAD": "上り",
+  "JITTER": "ジッター",
+  "PACKET_LOSS": "損失",
+  "SPEEDTEST_ERROR": "速度測定に失敗しました",
+  "UPDATED": "{time}前に更新",
+  "SECONDS": "秒",
+  "MINUTES": "分",
+  "HOURS": "時間",
+  "DAYS": "日"
+}

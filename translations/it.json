@@ -1,0 +1,19 @@
+{
+  "ONLINE": "Internet connesso",
+  "OFFLINE_WARNING": "NESSUNA CONNESSIONE INTERNET",
+  "NO_CONNECTION_SHORT": "OFFLINE",
+  "CHECKING": "Verifica connessione…",
+  "MEASURING": "Misurazione velocità…",
+  "LOADING": "Caricamento…",
+  "PING": "Ping",
+  "DOWNLOAD": "Download",
+  "UPLOAD": "Upload",
+  "JITTER": "Jitter",
+  "PACKET_LOSS": "Perdita",
+  "SPEEDTEST_ERROR": "Test di velocità non riuscito",
+  "UPDATED": "Aggiornato {time} fa",
+  "SECONDS": "s",
+  "MINUTES": "min",
+  "HOURS": "h",
+  "DAYS": "g"
+}

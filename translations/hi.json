@@ -1,0 +1,19 @@
+{
+  "ONLINE": "इंटरनेट कनेक्ट है",
+  "OFFLINE_WARNING": "इंटरनेट कनेक्शन नहीं है",
+  "NO_CONNECTION_SHORT": "ऑफ़लाइन",
+  "CHECKING": "कनेक्शन जाँच रहे हैं…",
+  "MEASURING": "गति मापी जा रही है…",
+  "LOADING": "लोड हो रहा है…",
+  "PING": "पिंग",
+  "DOWNLOAD": "डाउनलोड",
+  "UPLOAD": "अपलोड",
+  "JITTER": "जिटर",
+  "PACKET_LOSS": "हानि",
+  "SPEEDTEST_ERROR": "गति परीक्षण विफल",
+  "UPDATED": "{time} पहले अपडेट",
+  "SECONDS": "से",
+  "MINUTES": "मि",
+  "HOURS": "घं",
+  "DAYS": "दि"
+}

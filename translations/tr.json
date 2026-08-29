@@ -1,0 +1,19 @@
+{
+  "ONLINE": "İnternet bağlı",
+  "OFFLINE_WARNING": "İNTERNET BAĞLANTISI YOK",
+  "NO_CONNECTION_SHORT": "BAĞLI DEĞİL",
+  "CHECKING": "Bağlantı denetleniyor…",
+  "MEASURING": "Hız ölçülüyor…",
+  "LOADING": "Yükleniyor…",
+  "PING": "Ping",
+  "DOWNLOAD": "İndirme",
+  "UPLOAD": "Yükleme",
+  "JITTER": "Jitter",
+  "PACKET_LOSS": "Kayıp",
+  "SPEEDTEST_ERROR": "Hız testi başarısız",
+  "UPDATED": "{time} önce güncellendi",
+  "SECONDS": "sn",
+  "MINUTES": "dk",
+  "HOURS": "sa",
+  "DAYS": "g"
+}

@@ -1,0 +1,19 @@
+{
+  "ONLINE": "已連線至網際網路",
+  "OFFLINE_WARNING": "無法連線至網際網路",
+  "NO_CONNECTION_SHORT": "未連線",
+  "CHECKING": "正在檢查連線…",
+  "MEASURING": "正在測速…",
+  "LOADING": "載入中…",
+  "PING": "延遲",
+  "DOWNLOAD": "下載",
+  "UPLOAD": "上傳",
+  "JITTER": "抖動",
+  "PACKET_LOSS": "封包遺失",
+  "SPEEDTEST_ERROR": "測速失敗",
+  "UPDATED": "{time}前更新",
+  "SECONDS": "秒",
+  "MINUTES": "分鐘",
+  "HOURS": "小時",
+  "DAYS": "天"
+}

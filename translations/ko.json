@@ -1,0 +1,19 @@
+{
+  "ONLINE": "인터넷 연결됨",
+  "OFFLINE_WARNING": "인터넷에 연결되지 않음",
+  "NO_CONNECTION_SHORT": "연결 없음",
+  "CHECKING": "연결 확인 중…",
+  "MEASURING": "속도 측정 중…",
+  "LOADING": "불러오는 중…",
+  "PING": "핑",
+  "DOWNLOAD": "다운로드",
+  "UPLOAD": "업로드",
+  "JITTER": "지터",
+  "PACKET_LOSS": "손실",
+  "SPEEDTEST_ERROR": "속도 측정 실패",
+  "UPDATED": "{time} 전 업데이트",
+  "SECONDS": "초",
+  "MINUTES": "분",
+  "HOURS": "시간",
+  "DAYS": "일"
+}

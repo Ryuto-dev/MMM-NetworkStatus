@@ -1,0 +1,19 @@
+{
+  "ONLINE": "Internet anslutet",
+  "OFFLINE_WARNING": "INGEN INTERNETANSLUTNING",
+  "NO_CONNECTION_SHORT": "OFFLINE",
+  "CHECKING": "Kontrollerar anslutning…",
+  "MEASURING": "Mäter hastighet…",
+  "LOADING": "Läser in…",
+  "PING": "Ping",
+  "DOWNLOAD": "Nedladdning",
+  "UPLOAD": "Uppladdning",
+  "JITTER": "Jitter",
+  "PACKET_LOSS": "Förlust",
+  "SPEEDTEST_ERROR": "Hastighetstestet misslyckades",
+  "UPDATED": "Uppdaterad för {time} sedan",
+  "SECONDS": "sek",
+  "MINUTES": "min",
+  "HOURS": "tim",
+  "DAYS": "dgr"
+}

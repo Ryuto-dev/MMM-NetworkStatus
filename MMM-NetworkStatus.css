@@ -1,0 +1,266 @@
+/* MMM-NetworkStatus - MMM-NetworkStatus.css
+ *
+ * Text and icons only: no images, no gauges, no canvas.
+ * MIT Licensed.
+ */
+
+.mmm-networkstatus {
+  --ns-good: #8fdc8f;
+  --ns-warn: #ffd479;
+  --ns-bad: #ff5f5f;
+  --ns-alert: #ff3b30;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+  line-height: 1.35;
+}
+
+/* ---------- layout variants ---------- */
+
+.mmm-networkstatus.layout-horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.15em 1.1em;
+  align-items: baseline;
+}
+
+.mmm-networkstatus.layout-compact {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.1em 0.75em;
+  align-items: baseline;
+}
+
+.mmm-networkstatus.layout-compact .ns-label {
+  display: none;
+}
+
+.mmm-networkstatus.align-left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.mmm-networkstatus.align-center {
+  align-items: center;
+  text-align: center;
+}
+
+.mmm-networkstatus.align-right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.mmm-networkstatus.layout-horizontal.align-center,
+.mmm-networkstatus.layout-compact.align-center {
+  justify-content: center;
+}
+
+.mmm-networkstatus.layout-horizontal.align-right,
+.mmm-networkstatus.layout-compact.align-right {
+  justify-content: flex-end;
+}
+
+/* ---------- font sizes ---------- */
+
+.mmm-networkstatus.size-xsmall {
+  font-size: 14px;
+}
+
+.mmm-networkstatus.size-small {
+  font-size: 18px;
+}
+
+.mmm-networkstatus.size-medium {
+  font-size: 24px;
+}
+
+.mmm-networkstatus.size-large {
+  font-size: 32px;
+}
+
+/* ---------- rows ---------- */
+
+.mmm-networkstatus .ns-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
+  white-space: nowrap;
+}
+
+.mmm-networkstatus .ns-icon {
+  display: inline-block;
+  width: 1.15em;
+  text-align: center;
+  color: #999;
+  flex: 0 0 auto;
+}
+
+.mmm-networkstatus .ns-label {
+  color: #999;
+  font-size: 0.7em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.mmm-networkstatus .ns-value {
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  /* Keeps the digits from shifting while counting up. */
+  min-width: 4.2em;
+}
+
+.mmm-networkstatus.layout-compact .ns-value,
+.mmm-networkstatus.layout-horizontal .ns-value {
+  min-width: 0;
+}
+
+.mmm-networkstatus .ns-status-text {
+  color: #fff;
+}
+
+.mmm-networkstatus .ns-extra {
+  font-size: 0.6em;
+}
+
+.mmm-networkstatus .ns-reason {
+  font-size: 0.55em;
+  color: var(--ns-alert);
+  opacity: 0.85;
+}
+
+.mmm-networkstatus .ns-footer {
+  color: #909090;
+  white-space: normal;
+}
+
+/* ---------- severity colours ---------- */
+
+.mmm-networkstatus .ns-value.level-good {
+  color: var(--ns-good);
+}
+
+.mmm-networkstatus .ns-value.level-warn {
+  color: var(--ns-warn);
+}
+
+.mmm-networkstatus .ns-value.level-bad {
+  color: var(--ns-bad);
+}
+
+.mmm-networkstatus .ns-ok {
+  color: var(--ns-good);
+}
+
+/* ---------- offline warning ---------- */
+
+.mmm-networkstatus.offline .ns-value,
+.mmm-networkstatus.offline .ns-label,
+.mmm-networkstatus.offline .ns-icon,
+.mmm-networkstatus.offline .ns-status-text,
+.mmm-networkstatus.offline .ns-footer,
+.mmm-networkstatus .ns-alert {
+  color: var(--ns-alert) !important;
+}
+
+.mmm-networkstatus.offline .ns-status {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+/* The warning line pulses so it is impossible to miss on a mirror. */
+.mmm-networkstatus.offline .ns-status .ns-icon,
+.mmm-networkstatus.offline .ns-status .ns-status-text {
+  animation: ns-alert-blink 1.4s ease-in-out infinite;
+}
+
+@keyframes ns-alert-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* ---------- measuring animation ---------- */
+
+.mmm-networkstatus .ns-row.measuring .ns-value {
+  color: #fff;
+  animation: ns-measure-flicker 0.9s ease-in-out infinite;
+}
+
+.mmm-networkstatus .ns-row.measuring .ns-icon {
+  color: #fff;
+  animation: ns-measure-pulse 0.9s ease-in-out infinite;
+}
+
+/* A trailing caret hints that the number is still moving. */
+.mmm-networkstatus .ns-row.measuring .ns-value::after {
+  content: "…";
+  margin-left: 0.15em;
+  opacity: 0.7;
+  animation: ns-dots 1.2s steps(4, end) infinite;
+}
+
+@keyframes ns-measure-flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.55;
+  }
+}
+
+@keyframes ns-measure-pulse {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-0.12em);
+  }
+}
+
+@keyframes ns-dots {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.mmm-networkstatus .ns-icon.spin {
+  animation: ns-spin 1.6s linear infinite;
+}
+
+@keyframes ns-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.mmm-networkstatus.testing .ns-status-text {
+  animation: ns-measure-flicker 1.2s ease-in-out infinite;
+}
+
+/* ---------- reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .mmm-networkstatus *,
+  .mmm-networkstatus *::after {
+    animation: none !important;
+  }
+}
